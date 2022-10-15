@@ -12,7 +12,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text="Hey, bitch!")
 
 async def convert(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    text_caps = ' '.join(context.args) + " is equal to" + "tut budet otvet"
+    text_caps = ' '.join(context.args) + " is equal to " + "tut budet otvet"
     await context.bot.send_message(chat_id=update.effective_chat.id, text=text_caps)
 if __name__ == '__main__':
     application = ApplicationBuilder().token('5403325384:AAHEje2j4h1ERaK5Dk5yry5BGBzT_lY59zA').build()
