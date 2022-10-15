@@ -15,10 +15,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def convert(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [
-            InlineKeyboardButton("Temp", callback_data="1"),
-            InlineKeyboardButton("Weight", callback_data="2"),
+            InlineKeyboardButton("🌡Temp", callback_data="1"),
+            InlineKeyboardButton("⚖Weight", callback_data="2"),
         ],
-        [InlineKeyboardButton("Lenght", callback_data="3")],
+        [InlineKeyboardButton("📐Lenght", callback_data="3")],
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
