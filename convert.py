@@ -1,6 +1,6 @@
-n = float(input())
-var1 = input()
-var2 = input()
+#n = float(input())
+#var1 = input()
+#var2 = input()
 
 def temperature(n, var1, var2):
     if var1 == "C" and var2 == "F":
