@@ -14,7 +14,7 @@ def temperature(n, var1, var2):
         res = c + 273.15
     elif var2 == "f":
         res = (9/5) * c + 32
-    return round(res, 2)
+    return round(res, 10)
 
 def length(n, var1, var2):
     if var1 == "cm":
@@ -54,7 +54,7 @@ def length(n, var1, var2):
         res = cm * 10
     elif var2 == "mm":
         res = cm / 10
-    return round(res, 2)
+    return round(res, 10)
 
 def weight(n, var1, var2):
     if var1 == "kg":
@@ -89,4 +89,4 @@ def weight(n, var1, var2):
         res = kg * 0.022046
     elif var2 == "n":
         res = kg * 9.806652
-    return round(res, 2)
+    return round(res, 10)
