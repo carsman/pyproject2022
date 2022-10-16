@@ -16,6 +16,48 @@ def temperature(n, var1, var2):
         res = (9/5) * c + 32
     return round(res, 2)
 
+def length(n, var1, var2):
+    if var1 == "cm":
+        cm = n
+    elif var1 == "mm":
+        cm = n * 10
+    elif var1 == "km":
+        cm = n * 100000
+    elif var1 == "m":
+        cm = n * 100
+    elif var1 == "ft":
+        cm = n * 30.48
+    elif var1 == "ml":
+        cm = n * 160934.4
+    elif var1 == "yd":
+        cm = n * 91.44
+    elif var1 == "inch":
+        cm = n * 2.54
+    elif var1 == "dm":
+        cm = n / 10
+    #converting to the value that is needed
+    if var2 == "cm":
+        res = cm
+    elif var2 == "m":
+        res = cm * 100
+    elif var2 == "km":
+        res = cm * 10 ** (-5)
+    elif var2 == "ft":
+        res = cm * 0.032808
+    elif var2 == "ml":
+        res = cm * 6.21 * 10 ** (-6)
+    elif var2 == "yd":
+        res = cm * 0.0120936
+    elif var2 == "inch":
+        res = cm * 0.393701
+    elif var2 == "dm":
+        res = cm * 10
+    elif var2 == "mm":
+        res = cm / 10
+    return round(res, 2)
+
+
+
 
 def weight(n, var1, var2):
     if var1 == "kg" and var2 == "lbs": #ounces
@@ -24,12 +66,4 @@ def weight(n, var1, var2):
         return round((n * 0.035274), 2)
 
 
-def length(n, var1, var2):
-    if var1 == "km" and var2 == "mile":
-        return round((n * 1.60934), 2)
-    elif var1 == "m" and var2 == "yd": #yards
-        return round((n * 1.09361), 2)
-    elif var1 == "m" and var2 == "ft": #футы
-        return round((n / 0.3048), 2)
-    elif var1 == "cm" and var2 == "inch":
-        return round((n * 2.5400013716), 2)
+
