@@ -21,14 +21,14 @@ def temperature(n, var1, var2):
     return round(res, 2)
 
 
-def weigt(n, var1, var2):
+def weight(n, var1, var2):
     if var1 == "kg" and var2 == "lbs": #ounces
         return round((n * 2.20462), 2)
     elif var1 == "gr" and var2 == "oz": #фунты
         return round((n * 0.035274), 2)
 
 
-def lenght(n, var1, var2):
+def length(n, var1, var2):
     if var1 == "km" and var2 == "mile":
         return round((n * 1.60934), 2)
     elif var1 == "m" and var2 == "yd": #yards
