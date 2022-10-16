@@ -44,7 +44,7 @@ def get_temp(message):
     bot.send_message(message.chat.id, "Converting")
     n, var1 = question.split(" ")
     n = int(n)
-    bot.send_message(message.chat.id, "Answer: " + str(temperature2(n, var1, newinch)) + newinch)
+    bot.send_message(message.chat.id, "Answer: " + str(temperature(n, var1, newinch)) + newinch)
 
 
 def get_initial_weight(message):
@@ -83,7 +83,7 @@ def get_length(message):
 def start(m, res=False):
     bot.send_message(m.chat.id, 'Hello! This bot can help you to convert different units of measurement!')
     bot.send_message(m.chat.id, 'To convert something, please write /convert')
-# Получение сообщений от юзера
+
 
 
 # Запускаем бота
