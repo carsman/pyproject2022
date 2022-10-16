@@ -1,7 +1,3 @@
-#n = float(input())
-#var1 = input()
-#var2 = input()
-
 
 def temperature(n, var1, var2):
     # переведем в Цельсия вне зависимости от того, какая величина дана
