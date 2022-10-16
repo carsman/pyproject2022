@@ -56,6 +56,7 @@ def length(n, var1, var2):
         res = cm / 10
     return round(res, 2)
 
+def weigth(n, var1, var2):
 
 
 
