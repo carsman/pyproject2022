@@ -1,18 +1,18 @@
 
 def temperature(n, var1, var2):
     # переведем в Цельсия вне зависимости от того, какая величина дана
-    if var1 == "C":
+    if var1 == "c":
         c = n
-    elif var1 == "K":
+    elif var1 == "k":
         c = n - 273.15
-    elif var1 == "F":
+    elif var1 == "f":
         c = (5 / 9) * n - 32
     #переведем цельсия в нужную величину
-    if var2 == "C":
+    if var2 == "c":
         res = c
-    elif var2 == "K":
+    elif var2 == "k":
         res = c + 273.15
-    elif var2 == "F":
+    elif var2 == "f":
         res = (9/5) * c + 32
     return round(res, 2)
 
@@ -56,15 +56,37 @@ def length(n, var1, var2):
         res = cm / 10
     return round(res, 2)
 
-def weigth(n, var1, var2):
-
-
-
 def weight(n, var1, var2):
-    if var1 == "kg" and var2 == "lbs": #ounces
-        return round((n * 2.20462), 2)
-    elif var1 == "gr" and var2 == "oz": #фунты
-        return round((n * 0.035274), 2)
-
-
-
+    if var1 == "kg":
+        kg = n
+    elif var1 == "gr":
+        kg = n * 1000
+    elif var1 == "oz":
+        kg = n * 0.02835
+    elif var1 == "lbs":
+        kg = n * 0.453592
+    elif var1 == "stone":
+        kg = n * 6.350295
+    elif var1 == "cwt british":
+        kg = n * 50.6
+    elif var1 == "cwt usa":
+        kg = n * 45.359229
+    elif var1 == "n":
+        kg = n * 0.101972
+    if var2 == "kg":
+        res = kg
+    elif var2 == "gr":
+        res = kg / 1000
+    elif var2 == "oz":
+        res = kg * 35.27396
+    elif var2 == "lbs":
+        res = kg * 2.204623
+    elif var2 == "stone":
+        res = kg * 0.157473
+    elif var2 == "cwt british":
+        res = kg * 0.019684
+    elif var2 == "cwt usa":
+        res = kg * 0.022046
+    elif var2 == "n":
+        res = kg * 9.806652
+    return round(res, 2)
