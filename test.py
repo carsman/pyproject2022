@@ -1,9 +1,7 @@
 from unittest import TestCase
-from project2022-1 import temperature
-from project2022-1 import weight
-from project2022-1 import length
+from convert import *
 
-class Testing(TestCase):
+class Testing_t(TestCase):
     def test_temperature(self) -> None:
         cases =[
             (59, (15,"c", "f"))
@@ -13,7 +11,7 @@ class Testing(TestCase):
             with self.subTest(expected):
                 self.assertEqual(expected, temperature(args))
 
-class Testing(TestCase):
+class Testing_w(TestCase):
     def test_weight(self) -> None:
         cases =[
             (133.446653, (30,"n", "ft"))
@@ -23,7 +21,7 @@ class Testing(TestCase):
             with self.subTest(expected):
                 self.assertEqual(expected, weight(args))
 
-class Testing(TestCase):
+class Testing_l(TestCase):
     def test_length(self) -> None:
         cases =[
             (3.94, (10,"cm", "inch"))
