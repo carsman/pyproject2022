@@ -20,7 +20,7 @@ def length(n, var1, var2):
     if var1 == "cm":
         cm = n
     elif var1 == "mm":
-        cm = n * 10
+        cm = n / 10
     elif var1 == "km":
         cm = n * 100000
     elif var1 == "m":
@@ -39,7 +39,7 @@ def length(n, var1, var2):
     if var2 == "cm":
         res = cm
     elif var2 == "m":
-        res = cm * 100
+        res = cm / 100
     elif var2 == "km":
         res = cm * 10 ** (-5)
     elif var2 == "ft":
@@ -53,14 +53,14 @@ def length(n, var1, var2):
     elif var2 == "dm":
         res = cm * 10
     elif var2 == "mm":
-        res = cm / 10
+        res = cm * 10
     return round(res, 10)
 
 def weight(n, var1, var2):
     if var1 == "kg":
         kg = n
     elif var1 == "gr":
-        kg = n * 1000
+        kg = n / 1000
     elif var1 == "oz":
         kg = n * 0.02835
     elif var1 == "lbs":
