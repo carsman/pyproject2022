@@ -1,20 +1,15 @@
 from unittest import TestCase
 from convert import *
 
-class Testing_t(TestCase):
+
+class Testing(TestCase):
     def test_temperature(self) -> None:
-        cases = [
-            (59, [15, "c", "f"]),
-            (161.33, [345, "k", "f"]),
-        ]
-        for expected, args in cases:
-            with self.subTest(expected):
-                self.assertEqual(expected, temperature(args))
+        a = '12'
+        b = 12, "c", "c"
+        self.assertEqual(12, temperature(12, "c", "c"))
 
-
-class Testing_w(TestCase):
     def test_weight(self) -> None:
-        cases =[
+        cases = [
             (133.446653, (30, "n", "ft")),
             (1.700971, (60, "k", "f")),
         ]
@@ -22,10 +17,9 @@ class Testing_w(TestCase):
             with self.subTest(expected):
                 self.assertEqual(expected, weight(args))
 
-class Testing_l(TestCase):
     def test_length(self) -> None:
-        cases =[
-            (3.94, (10,"cm", "inch")),
+        cases = [
+            (3.94, (10, "cm", "inch")),
             (6400.8, (7, "yd", "ml")),
         ]
         for expected, args in cases:

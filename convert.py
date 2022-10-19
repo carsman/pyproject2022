@@ -1,13 +1,13 @@
 
 def temperature(n, var1, var2):
-    # переведем в Цельсия вне зависимости от того, какая величина дана
+    c = 0
+    res = 0
     if var1 == "c":
         c = n
     elif var1 == "k":
         c = n - 273.15
     elif var1 == "f":
-        c = (5 / 9) * n - 32
-    #переведем цельсия в нужную величину
+        c = (n - 32) / 1.8
     if var2 == "c":
         res = c
     elif var2 == "k":
@@ -16,7 +16,10 @@ def temperature(n, var1, var2):
         res = (9/5) * c + 32
     return round(res, 10)
 
+
 def length(n, var1, var2):
+    cm = 0
+    res = 0
     if var1 == "cm":
         cm = n
     elif var1 == "mm":
@@ -35,7 +38,6 @@ def length(n, var1, var2):
         cm = n * 2.54
     elif var1 == "dm":
         cm = n / 10
-    #converting to the value that is needed
     if var2 == "cm":
         res = cm
     elif var2 == "m":
@@ -56,7 +58,10 @@ def length(n, var1, var2):
         res = cm * 10
     return round(res, 10)
 
+
 def weight(n, var1, var2):
+    kg = 0
+    res = 0
     if var1 == "kg":
         kg = n
     elif var1 == "gr":

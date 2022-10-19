@@ -1,6 +1,10 @@
-import telebot, re, wikipedia
-from convert import *
+import re
+import telebot
+import wikipedia
 from telebot import types
+
+from convert import *
+
 bot = telebot.TeleBot('5403325384:AAHEje2j4h1ERaK5Dk5yry5BGBzT_lY59zA')
 
 
@@ -31,17 +35,18 @@ def wiki_choosing(message):
     bot.send_message(message.chat.id, getwiki(message.text), reply_markup=markup)
     bot.send_message(message.chat.id, 'Press /wiki to learn about other units or /convert to make a convert')
 
+
 @bot.message_handler(commands=["convert"])
 def convert(message, res=False):
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        item1 = types.KeyboardButton("🌡Temp")
-        item2 = types.KeyboardButton("⚖Weight")
-        item3 = types.KeyboardButton("📐length")
-        markup.add(item1)
-        markup.add(item2)
-        markup.add(item3)
-        bot.send_message(message.chat.id, 'What type of data you want to convert?',  reply_markup=markup)
-        bot.register_next_step_handler(message, type_choosing)
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    item1 = types.KeyboardButton("🌡Temp")
+    item2 = types.KeyboardButton("⚖Weight")
+    item3 = types.KeyboardButton("📐length")
+    markup.add(item1)
+    markup.add(item2)
+    markup.add(item3)
+    bot.send_message(message.chat.id, 'What type of data you want to convert?', reply_markup=markup)
+    bot.register_next_step_handler(message, type_choosing)
 
 
 def type_choosing(message):
@@ -112,22 +117,22 @@ def get_length(message):
 def getwiki(s):
     try:
         ny = wikipedia.page(s)
-        wikitext=ny.content[:1000]
-        wikimas=wikitext.split('.')
+        wikitext = ny.content[:1000]
+        wikimas = wikitext.split('.')
         wikimas = wikimas[:-1]
         wikitext2 = ''
         for x in wikimas:
-            if not('==' in x):
-                if(len((x.strip()))>3):
-                   wikitext2=wikitext2+x+'.'
+            if not ('==' in x):
+                if (len((x.strip())) > 3):
+                    wikitext2 = wikitext2 + x + '.'
             else:
                 break
-        wikitext2=re.sub('\([^()]*\)', '', wikitext2)
-        wikitext2=re.sub('\([^()]*\)', '', wikitext2)
-        wikitext2=re.sub('\{[^\{\}]*\}', '', wikitext2)
+        wikitext2 = re.sub('\([^()]*\)', '', wikitext2)
+        wikitext2 = re.sub('\([^()]*\)', '', wikitext2)
+        wikitext2 = re.sub('\{[^\{\}]*\}', '', wikitext2)
         return wikitext2
     except Exception as e:
-        return 'В энциклопедии нет информации об этом'
+        return 'There is no such information in wikipedia'
 
 
 @bot.message_handler(commands=["start"])
