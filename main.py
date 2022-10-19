@@ -74,9 +74,9 @@ def get_temp(message):
     global newinch, question
     newinch = message.text
     bot.send_message(message.chat.id, "Converting")
-    n, var1 = question.split(" ")
+    n, var1 = question.split(" ", maxsplit=1)
     n = int(n)
-    bot.send_message(message.chat.id, "Answer: " + str(temperature(n, var1.lower(), newinch.lower())) + newinch)
+    bot.send_message(message.chat.id, "Answer: " + str(temperature(n, var1.lower(), newinch.lower())) + " " + newinch)
     bot.send_message(message.chat.id, 'Press /wiki to learn about units or /convert to make a new convert')
 
 
@@ -91,9 +91,9 @@ def get_weight(message):
     global newinch, question
     newinch = message.text
     bot.send_message(message.chat.id, "Converting")
-    n, var1 = question.split(" ")
+    n, var1 = question.split(" ", maxsplit=1)
     n = int(n)
-    bot.send_message(message.chat.id, "Answer: " + str(weight(n, var1.lower(), newinch.lower())) + newinch)
+    bot.send_message(message.chat.id, "Answer: " + str(weight(n, var1.lower(), newinch.lower())) + " " + newinch)
     bot.send_message(message.chat.id, 'Press /wiki to learn about units or /convert to make a new convert')
 
 
@@ -108,9 +108,9 @@ def get_length(message):
     global newinch, question
     newinch = message.text
     bot.send_message(message.chat.id, "Converting")
-    n, var1 = question.split(" ")
+    n, var1 = question.split(" ", maxsplit=1)
     n = int(n)
-    bot.send_message(message.chat.id, "Answer: " + str(length(n, var1.lower(), newinch.lower())) + newinch)
+    bot.send_message(message.chat.id, "Answer: " + str(length(n, var1.lower(), newinch.lower())) + " " + newinch)
     bot.send_message(message.chat.id, 'Press /wiki to learn about units or /convert to make a new convert')
 
 

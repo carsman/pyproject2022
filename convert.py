@@ -81,7 +81,7 @@ def weight(n, var1, var2):
     if var2 == "kg":
         res = kg
     elif var2 == "gr":
-        res = kg / 1000
+        res = kg * 1000
     elif var2 == "oz":
         res = kg * 35.27396
     elif var2 == "lbs":
